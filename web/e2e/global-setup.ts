@@ -2,6 +2,7 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { assertSafeE2ETarget } from "./e2e-target-guard";
 
 const DEFAULT_E2E_EMAIL = "e2e.admin@crm-food-trading.local";
 const DEFAULT_E2E_PASSWORD = "E2E-StrongPass!123";
@@ -43,6 +44,8 @@ export default async function globalSetup() {
       "Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in web/.env.local.",
     );
   }
+
+  assertSafeE2ETarget(supabaseUrl, process.env.E2E_TARGET_SUPABASE_URL);
 
   const e2eEmail = process.env.E2E_USER_EMAIL ?? DEFAULT_E2E_EMAIL;
   const e2ePassword = process.env.E2E_USER_PASSWORD ?? DEFAULT_E2E_PASSWORD;

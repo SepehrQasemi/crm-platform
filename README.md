@@ -149,7 +149,7 @@ Required:
 
 Optional:
 - `BREVO_API_KEY`
-- `BREVO_WEBHOOK_SECRET` (protect `/api/webhooks/brevo`)
+- `BREVO_WEBHOOK_SECRET` is required to accept `/api/webhooks/brevo` calls; the endpoint rejects every request when it is omitted
 - `CRON_SECRET` (protect job endpoints for cron calls)
 - `BI_API_KEY` (protect `/api/bi/kpis`)
 - `NEXT_PUBLIC_APP_NAME`
@@ -199,6 +199,7 @@ Notes:
 - Dedicated mobile responsive suite: `web/e2e/mobile-responsive.spec.ts` (overflow + field usability).
 - Run mobile-only matrix explicitly with:
   - `npm --workspace web run test:e2e -- --project=mobile-chromium`
+- Remote E2E runs require `E2E_TARGET_SUPABASE_URL` to match the intended `NEXT_PUBLIC_SUPABASE_URL`; setup stops before admin or seed operations when it is missing or mismatched.
 - Test credentials can be overridden with:
   - `E2E_USER_EMAIL`
   - `E2E_USER_PASSWORD`
