@@ -1,4 +1,4 @@
-# ATA CRM
+# CRM Platform
 
 SaaS CRM project for a B2B company trading raw food ingredients.
 
@@ -101,10 +101,10 @@ SaaS CRM project for a B2B company trading raw food ingredients.
 
 ## Local Setup
 1. Copy secrets into `web/.env.local`
-   - Recommended source: `C:\dev\crm-secrets.env`
+   - Recommended source: `a private environment file outside the repository`
 2. Install dependencies:
 ```bash
-cd C:\dev\ATA-CRM
+cd .
 npm ci
 ```
 3. Apply Supabase migrations (linked project):
@@ -117,7 +117,7 @@ npm run dev
 ```
 
 ## One-Click Start (Windows)
-Use one of these options from `C:\dev\ATA-CRM`:
+Use one of these options from `.`:
 
 1. Double-click:
 - `open-crm.bat`
@@ -129,7 +129,7 @@ npm run start:oneclick
 
 What it does automatically:
 - checks `node` and `npm`
-- creates `web/.env.local` from `C:\dev\crm-secrets.env` if needed
+- creates `web/.env.local` from `a private environment file outside the repository` if needed
 - installs dependencies if missing
 - starts the app and opens `http://127.0.0.1:3000/login`
 
@@ -156,9 +156,9 @@ Optional:
 
 Password reset delivery notes:
 - Supabase Auth email sending has provider limits on free tiers (`email rate limit exceeded` may appear after repeated requests).
-- ATA CRM UI now throttles reset retries for 60s and shows a clear message instead of raw provider text.
+- CRM Platform UI now throttles reset retries for 60s and shows a clear message instead of raw provider text.
 - For reliable production delivery, configure custom SMTP in Supabase Auth (Email settings).
-- ATA CRM reset flow now sends recovery links directly to `/reset-password` on the same app origin.
+- CRM Platform reset flow now sends recovery links directly to `/reset-password` on the same app origin.
 - Keep direct reset URLs allowed in Supabase URL Configuration:
   - `http://localhost:3000/reset-password`
   - `http://127.0.0.1:3000/reset-password`
@@ -217,7 +217,7 @@ npm run seed:demo
 
 The seed is idempotent and creates `[DEMO]` data for live presentation.
 
-## Presentation Seed (clean jury dataset)
+## Presentation Seed (reproducible demo dataset)
 ```bash
 npm run seed:presentation
 ```
@@ -237,7 +237,7 @@ What it does:
 
 Important:
 - E2E runs create role-based test users/data automatically for automation tests.
-- For jury demo, run `npm run seed:presentation` after any E2E run.
+- For a clean demo, run `npm run seed:presentation` after any E2E run.
 
 ## Deployment
 - Vercel root directory: `web`
@@ -251,7 +251,7 @@ Important:
 Build and run with Docker Compose:
 
 ```bash
-cd C:\dev\ATA-CRM
+cd .
 docker compose up --build -d
 ```
 

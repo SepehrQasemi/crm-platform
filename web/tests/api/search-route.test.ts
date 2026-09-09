@@ -50,11 +50,11 @@ describe("GET /api/search", () => {
     mocks.getUserRole.mockResolvedValue("commercial");
 
     const companiesQuery = createFluentQuery({
-      data: [{ id: "cmp-1", name: "ATA Foods", sector: "Food", city: "Paris", country: "France" }],
+      data: [{ id: "cmp-1", name: "Northstar Foods", sector: "Food", city: "Paris", country: "France" }],
       error: null,
     });
     const contactsQuery = createFluentQuery({
-      data: [{ id: "con-1", first_name: "Amir", last_name: "Qasemi", email: "amir@ata.test", job_title: "Buyer" }],
+      data: [{ id: "con-1", first_name: "Amir", last_name: "Qasemi", email: "amir@example.test", job_title: "Buyer" }],
       error: null,
     });
     const productsQuery = createFluentQuery({
@@ -66,7 +66,7 @@ describe("GET /api/search", () => {
       error: null,
     });
     const colleaguesQuery = createFluentQuery({
-      data: [{ id: "usr-2", full_name: "Sara Ata", first_name: "Sara", last_name: "Ata", position: "Sales", department: "CRM" }],
+      data: [{ id: "usr-2", full_name: "Sara Demo", first_name: "Sara", last_name: "Demo", position: "Sales", department: "CRM" }],
       error: null,
     });
     const leadsQuery = createFluentQuery({
@@ -74,7 +74,7 @@ describe("GET /api/search", () => {
       error: null,
     });
     const tasksQuery = createFluentQuery({
-      data: [{ id: "task-1", title: "Call ATA Foods", status: "todo", priority: "high", due_date: null }],
+      data: [{ id: "task-1", title: "Call Northstar Foods", status: "todo", priority: "high", due_date: null }],
       error: null,
     });
 
@@ -87,12 +87,12 @@ describe("GET /api/search", () => {
       .mockReturnValueOnce(leadsQuery)
       .mockReturnValueOnce(tasksQuery);
 
-    const response = await GET(new Request("http://127.0.0.1:3000/api/search?q=ata"));
+    const response = await GET(new Request("http://127.0.0.1:3000/api/search?q=northstar"));
     const json = await response.json();
 
     expect(response.status).toBe(200);
     expect(tasksQuery.or).toHaveBeenCalledWith("owner_id.eq.user-1,assigned_to.eq.user-1");
-    expect(tasksQuery.ilike).toHaveBeenCalledWith("title", "%ata%");
+    expect(tasksQuery.ilike).toHaveBeenCalledWith("title", "%northstar%");
 
     expect(json.results.companies[0].href).toBe("/companies/cmp-1");
     expect(json.results.contacts[0].href).toBe("/contacts/con-1");

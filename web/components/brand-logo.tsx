@@ -12,15 +12,15 @@ export function BrandLogo({
     <div className={clsx("brand-logo", compact && "compact", className)}>
       <Image
         className="brand-icon"
-        src="/ata-logo.svg"
-        alt="ATA CRM"
+        src="/crm-logo.svg"
+        alt="CRM Platform"
         width={58}
         height={42}
         priority
       />
       <div className="brand-text">
-        <strong>ATA CRM</strong>
-        {!compact ? <span>Abadis Tejarat Arka</span> : null}
+        <strong>CRM Platform</strong>
+        {!compact ? <span>Customer relationship workspace</span> : null}
       </div>
     </div>
   );

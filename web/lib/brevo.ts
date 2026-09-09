@@ -20,7 +20,7 @@ export async function sendBrevoEmail(input: SendEmailInput) {
     },
     body: JSON.stringify({
       sender: {
-        name: "ATA CRM",
+        name: "CRM Platform",
         email: "no-reply@crm-food-trading.local",
       },
       to: [

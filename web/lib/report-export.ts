@@ -130,7 +130,7 @@ function buildPdfBufferFromLines(lines: string[]) {
 
 export function buildDashboardPdfReport(payload: DashboardExportPayload) {
   const lines: string[] = [
-    "ATA CRM - Dashboard Report",
+    "CRM Platform - Dashboard Report",
     `Generated at: ${new Date().toISOString()}`,
     `Range: ${payload.range}`,
     "",

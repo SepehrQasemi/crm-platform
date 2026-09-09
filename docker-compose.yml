@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ata-crm-web
+    container_name: crm-platform-web
     ports:
       - "3000:3000"
     env_file:

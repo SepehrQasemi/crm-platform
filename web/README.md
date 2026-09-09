@@ -1,4 +1,4 @@
-# ATA CRM (Web App)
+# CRM Platform (Web App)
 
 Frontend + API layer for the CRM project.
 

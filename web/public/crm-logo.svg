@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
-  <title id="title">ATA CRM Logo</title>
-  <desc id="desc">Red ATA emblem with transparent background</desc>
+  <title id="title">CRM Platform Logo</title>
+  <desc id="desc">Red CRM emblem with transparent background</desc>
   <ellipse cx="160" cy="118" rx="136" ry="90" fill="#f01616"/>
   <ellipse cx="160" cy="118" rx="129" ry="83" fill="none" stroke="#ffffff" stroke-width="9"/>
   <ellipse cx="160" cy="118" rx="140" ry="94" fill="none" stroke="#f01616" stroke-width="12"/>
@@ -15,6 +15,6 @@
     letter-spacing="2"
     fill="#ffffff"
   >
-    ATA
+    CRM
   </text>
 </svg>

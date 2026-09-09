@@ -59,7 +59,7 @@ export async function loginAsRole(page: Page, role: E2ERole): Promise<void> {
   const credentials = credentialsByRole(role);
 
   await page.goto("/login");
-  await expect(page.getByRole("heading", { name: "ATA CRM" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "CRM Platform" })).toBeVisible();
 
   await page.getByLabel("Email").fill(credentials.email);
   await page.getByLabel("Password", { exact: true }).fill(credentials.password);

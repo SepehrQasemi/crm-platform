@@ -12,7 +12,7 @@ test.describe("CRM end-to-end", () => {
 
   test("@smoke login uses compact reset flow", async ({ page }) => {
     await page.goto("/login");
-    await expect(page.getByRole("heading", { name: "ATA CRM" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "CRM Platform" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Reset" })).toHaveCount(0);
 
     await page.getByRole("button", { name: "Forgot password?" }).click();

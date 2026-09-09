@@ -265,12 +265,12 @@ async function main() {
 
   const companies = await insertBatch("companies", [
     {
-      name: "ATA Ingredient Sourcing GmbH",
+      name: "Northstar Ingredient Sourcing GmbH",
       company_role: "supplier",
       sector: "Food Ingredients",
       city: "Hamburg",
       country: "Germany",
-      website: "https://ata-ingredientsourcing.com",
+      website: "https://northstar-ingredients.example",
       notes: "Primary strategic supplier for starches, hydrocolloids, and dairy powders.",
       owner_id: users.sepehrId,
     },
@@ -322,11 +322,11 @@ async function main() {
     {
       first_name: "Hugo",
       last_name: "Meyer",
-      email: "hugo.meyer@ata-ingredientsourcing.com",
+      email: "hugo.meyer@northstar-ingredients.example",
       phone: "+49 40 1111 1001",
       job_title: "Head of Export Sales",
       notes: "Main commercial contact for strategic sourcing.",
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       is_company_agent: true,
       agent_rank: 1,
       owner_id: users.sepehrId,
@@ -334,11 +334,11 @@ async function main() {
     {
       first_name: "Elena",
       last_name: "Rossi",
-      email: "elena.rossi@ata-ingredientsourcing.com",
+      email: "elena.rossi@northstar-ingredients.example",
       phone: "+49 40 1111 1002",
       job_title: "Technical Sales Manager",
       notes: "Supports product qualification and technical specs.",
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       is_company_agent: true,
       agent_rank: 2,
       owner_id: users.sepehrId,
@@ -424,7 +424,7 @@ async function main() {
   const products = await insertBatch("products", [
     {
       name: "Native Corn Starch",
-      sku: "ATA-ST-001",
+      sku: "CRM-ST-001",
       category: "Starches",
       unit: "kg",
       default_purchase_price: 880,
@@ -435,7 +435,7 @@ async function main() {
     },
     {
       name: "Pregelatinized Corn Starch",
-      sku: "ATA-ST-002",
+      sku: "CRM-ST-002",
       category: "Starches",
       unit: "kg",
       default_purchase_price: 980,
@@ -446,7 +446,7 @@ async function main() {
     },
     {
       name: "Tapioca Starch Premium",
-      sku: "ATA-ST-003",
+      sku: "CRM-ST-003",
       category: "Starches",
       unit: "kg",
       default_purchase_price: 1050,
@@ -457,7 +457,7 @@ async function main() {
     },
     {
       name: "Kappa Carrageenan",
-      sku: "ATA-HC-001",
+      sku: "CRM-HC-001",
       category: "Hydrocolloids",
       unit: "kg",
       default_purchase_price: 7600,
@@ -468,7 +468,7 @@ async function main() {
     },
     {
       name: "Iota Carrageenan",
-      sku: "ATA-HC-002",
+      sku: "CRM-HC-002",
       category: "Hydrocolloids",
       unit: "kg",
       default_purchase_price: 7820,
@@ -479,7 +479,7 @@ async function main() {
     },
     {
       name: "Xanthan Gum 200 Mesh",
-      sku: "ATA-HC-003",
+      sku: "CRM-HC-003",
       category: "Hydrocolloids",
       unit: "kg",
       default_purchase_price: 4100,
@@ -490,7 +490,7 @@ async function main() {
     },
     {
       name: "Guar Gum Food Grade",
-      sku: "ATA-HC-004",
+      sku: "CRM-HC-004",
       category: "Hydrocolloids",
       unit: "kg",
       default_purchase_price: 2950,
@@ -501,7 +501,7 @@ async function main() {
     },
     {
       name: "Cocoa Powder 10-12%",
-      sku: "ATA-CC-001",
+      sku: "CRM-CC-001",
       category: "Cocoa & Chocolate",
       unit: "kg",
       default_purchase_price: 3550,
@@ -512,7 +512,7 @@ async function main() {
     },
     {
       name: "Cocoa Powder 22-24%",
-      sku: "ATA-CC-002",
+      sku: "CRM-CC-002",
       category: "Cocoa & Chocolate",
       unit: "kg",
       default_purchase_price: 4920,
@@ -523,7 +523,7 @@ async function main() {
     },
     {
       name: "Alkalized Cocoa Powder",
-      sku: "ATA-CC-003",
+      sku: "CRM-CC-003",
       category: "Cocoa & Chocolate",
       unit: "kg",
       default_purchase_price: 4480,
@@ -534,7 +534,7 @@ async function main() {
     },
     {
       name: "Whole Milk Powder 26%",
-      sku: "ATA-DP-001",
+      sku: "CRM-DP-001",
       category: "Dairy Powders",
       unit: "kg",
       default_purchase_price: 3270,
@@ -545,7 +545,7 @@ async function main() {
     },
     {
       name: "Skim Milk Powder",
-      sku: "ATA-DP-002",
+      sku: "CRM-DP-002",
       category: "Dairy Powders",
       unit: "kg",
       default_purchase_price: 2980,
@@ -556,7 +556,7 @@ async function main() {
     },
     {
       name: "Dextrose Monohydrate",
-      sku: "ATA-SW-001",
+      sku: "CRM-SW-001",
       category: "Sweeteners",
       unit: "kg",
       default_purchase_price: 1180,
@@ -567,7 +567,7 @@ async function main() {
     },
     {
       name: "Fructose Syrup 55",
-      sku: "ATA-SW-002",
+      sku: "CRM-SW-002",
       category: "Sweeteners",
       unit: "kg",
       default_purchase_price: 1460,
@@ -578,7 +578,7 @@ async function main() {
     },
     {
       name: "Maltodextrin DE18",
-      sku: "ATA-SW-003",
+      sku: "CRM-SW-003",
       category: "Sweeteners",
       unit: "kg",
       default_purchase_price: 1320,
@@ -594,7 +594,7 @@ async function main() {
   await insertBatch("product_company_links", [
     {
       product_id: productByName["Native Corn Starch"],
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       relation_type: "traded",
       product_model: "Food Grade A",
       last_price: 880,
@@ -603,7 +603,7 @@ async function main() {
     },
     {
       product_id: productByName["Kappa Carrageenan"],
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       relation_type: "traded",
       product_model: "Refined E407",
       last_price: 7600,
@@ -612,7 +612,7 @@ async function main() {
     },
     {
       product_id: productByName["Whole Milk Powder 26%"],
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       relation_type: "traded",
       product_model: "Instant WMP 26",
       last_price: 3270,
@@ -621,7 +621,7 @@ async function main() {
     },
     {
       product_id: productByName["Dextrose Monohydrate"],
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       relation_type: "traded",
       product_model: "Monohydrate 99.5%",
       last_price: 1180,
@@ -630,7 +630,7 @@ async function main() {
     },
     {
       product_id: productByName["Cocoa Powder 10-12%"],
-      company_id: companyByName["ATA Ingredient Sourcing GmbH"],
+      company_id: companyByName["Northstar Ingredient Sourcing GmbH"],
       relation_type: "potential",
       product_model: "Natural Brown 10-12",
       last_price: 3550,

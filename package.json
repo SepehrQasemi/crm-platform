@@ -1,5 +1,5 @@
 {
-  "name": "ata-crm",
+  "name": "crm-platform",
   "private": true,
   "workspaces": [
     "web"

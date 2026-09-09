@@ -17,6 +17,6 @@ export const env = {
   brevoApiKey: process.env.BREVO_API_KEY ?? "",
   brevoWebhookSecret: process.env.BREVO_WEBHOOK_SECRET ?? "",
   biApiKey: process.env.BI_API_KEY ?? "",
-  appName: process.env.NEXT_PUBLIC_APP_NAME ?? "ATA CRM",
+  appName: process.env.NEXT_PUBLIC_APP_NAME ?? "CRM Platform",
   cronSecret: process.env.CRON_SECRET ?? "",
 };

@@ -5,7 +5,7 @@ import { Locale, isRtlLocale, normalizeLocale } from "@/lib/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ATA CRM",
+  title: "CRM Platform",
   description: "CRM platform for food products and additives sales teams",
 };
 
