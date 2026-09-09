@@ -84,7 +84,7 @@ async function findEmailLogByMessageId(messageId: string): Promise<EmailLogRow |
 }
 
 function isWebhookAuthorized(request: Request, url: URL) {
-  if (!env.brevoWebhookSecret) return true;
+  if (!env.brevoWebhookSecret) return false;
 
   const queryToken = url.searchParams.get("token");
   const headerToken = request.headers.get("x-webhook-token");
