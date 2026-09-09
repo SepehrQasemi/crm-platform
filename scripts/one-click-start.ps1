@@ -31,14 +31,14 @@ $nodeVersion = (& node -v)
 Write-Step "Node version: $nodeVersion"
 
 $envLocal = Join-Path $repoRoot "web\.env.local"
-$defaultSecrets = "C:\dev\crm-secrets.env"
+$defaultSecrets = "a private environment file outside the repository"
 
 if (-not (Test-Path $envLocal)) {
   if (Test-Path $defaultSecrets) {
     Copy-Item $defaultSecrets $envLocal
-    Write-Step "Created web/.env.local from C:\dev\crm-secrets.env"
+    Write-Step "Created web/.env.local from a private environment file outside the repository"
   } else {
-    throw "Missing web/.env.local. Create it manually or add C:\dev\crm-secrets.env."
+    throw "Missing web/.env.local. Create it manually or add a private environment file outside the repository."
   }
 }
 

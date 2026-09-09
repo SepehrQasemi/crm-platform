@@ -153,7 +153,7 @@ export default function LoginPage() {
           <BrandLogo compact />
           <LanguageSwitcher />
         </div>
-        <h1>{tr("ATA CRM")}</h1>
+        <h1>{tr("CRM Platform")}</h1>
         <p>{tr("Sign in to manage your leads, contacts, and email campaigns.")}</p>
         <div className="row">
           <button

@@ -5,7 +5,7 @@ export type Locale = (typeof LOCALES)[number];
 type Dictionary = Record<string, string>;
 
 const fr: Dictionary = {
-  "ATA CRM": "ATA CRM",
+  "CRM Platform": "CRM Platform",
   Dashboard: "Tableau de bord",
   Contacts: "Contacts",
   Companies: "Entreprises",
@@ -615,7 +615,7 @@ const fr: Dictionary = {
 };
 
 const fa: Dictionary = {
-  "ATA CRM": "ATA CRM",
+  "CRM Platform": "CRM Platform",
   Dashboard: "Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯",
   Contacts: "Ù…Ø®Ø§Ø·Ø¨ÛŒÙ†",
   Companies: "Ø´Ø±Ú©Øªâ€ŒÙ‡Ø§",
