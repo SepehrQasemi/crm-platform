@@ -1,6 +1,28 @@
 # CRM Platform
 
-SaaS CRM project for a B2B company trading raw food ingredients.
+Full-stack CRM for managing companies, contacts, leads, tasks, product relationships, email workflows, and reporting.
+
+## Problem
+
+Operational customer data often becomes fragmented across spreadsheets and inboxes. CRM Platform models the core entities and workflows in one role-aware application while keeping reporting and follow-up close to daily work.
+
+## Screenshot
+
+![CRM Platform sign-in interface](docs/screenshots/login.png)
+
+The hosted URL is a working application entry point, not a public credentialed demo account.
+
+## Architecture
+
+The Next.js application contains the UI and route handlers. Supabase provides PostgreSQL, authentication, row-level security, and realtime events. Domain-facing API routes enforce session and role checks before data operations. See `docs/architecture.mmd` and the UML files under `docs/`.
+
+## Data model
+
+Major entities include profiles, companies, contacts, product categories, products, company-product links, leads, pipeline stages, tasks, notifications, and email logs. SQL migrations under `supabase/migrations/` are the authoritative schema history.
+
+## Authentication and authorization
+
+Supabase Auth handles identity. Application roles scope administrative functions, assignment, team reporting, and privileged jobs. Database policies and server-side checks remain part of the security boundary; webhook verification fails closed when its secret is unavailable.
 
 ## Structure
 - `supabase/`: SQL migrations and schema assets
@@ -215,9 +237,9 @@ Notes:
 npm run seed:demo
 ```
 
-The seed is idempotent and creates `[DEMO]` data for live presentation.
+The seed is idempotent and creates clearly labeled `[DEMO]` data for local evaluation.
 
-## Presentation Seed (reproducible demo dataset)
+## Reproducible Demo Dataset
 ```bash
 npm run seed:presentation
 ```
@@ -228,7 +250,7 @@ What it does:
   - `Amir Qasemi`
   - `Samar Jalali`
 - removes old test/demo business data
-- inserts a clean presentation dataset:
+- inserts a clean synthetic dataset:
   - 5 companies
   - 5 product categories
   - 15 products
@@ -279,3 +301,21 @@ Notes:
 ## Documentation
 - Docs index: `docs/README.md`
 - Diagrams: `docs/architecture.mmd`, `docs/workflow-commercial.mmd`, `docs/workflow-onboarding-help.mmd`, `docs/sequence-followup.mmd`, `docs/mcd.mmd`, `docs/use-case.puml`, `docs/uml-domain.puml`, `docs/uml-application-view.puml`
+
+## Technical challenges
+
+- keeping UI permissions, API authorization, and database policies aligned
+- calculating pipeline, aging, and forecasting views from operational entities
+- making email automation idempotent and observable
+- supporting deterministic E2E setup without permitting accidental production targeting
+
+## Known limitations
+
+- no anonymous public demo credentials are provided
+- hosted behavior depends on separately configured Supabase and email services
+- E2E suites require an isolated target and explicit matching guard variable
+- the application targets a small internal team rather than public multi-tenant SaaS hosting
+
+## Project status and licensing
+
+Active portfolio project with protected `main`, required CI, and a verified hosted login. No open-source license has been granted; reuse rights are reserved until a license is selected.
